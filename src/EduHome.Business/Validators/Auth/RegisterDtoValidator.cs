@@ -11,6 +11,9 @@ public class RegisterDtoValidator : AbstractValidator<RegisterDto>
             .NotEmpty().WithMessage("Fullnam is required!")
             .NotNull().WithMessage("Fullnam is required!")
             .Length(3, 50).WithMessage("Length 3-50 symbol");
+        RuleFor(c => c.Username)
+            .NotEmpty().WithMessage("Username is required!")
+            .NotNull().WithMessage("Username is required!");
         RuleFor(c => c.Email)
             .NotEmpty().WithMessage("Email is required")
             .NotNull().WithMessage("Fullnam is required!")

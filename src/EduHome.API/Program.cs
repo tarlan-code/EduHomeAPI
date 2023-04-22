@@ -35,6 +35,7 @@ builder.Services.AddAutoMapper(typeof(CourseMapper).Assembly);
 
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<AppDbContextInitializer>();
 
