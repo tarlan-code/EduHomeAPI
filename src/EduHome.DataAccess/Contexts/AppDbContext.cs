@@ -1,15 +1,15 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Configurations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace EduHome.DataAccess.Contexts;
-public class AppDbContext:DbContext
+public class AppDbContext:IdentityDbContext
 {
-	public AppDbContext(DbContextOptions<AppDbContext> options):base(options) { }
+	public AppDbContext(DbContextOptions options):base(options) { }
 
 	public DbSet<Course> Courses { get; set; }
-
+	public DbSet<AppUser> AppUsers { get; set; }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
