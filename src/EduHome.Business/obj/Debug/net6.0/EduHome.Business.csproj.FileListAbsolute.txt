@@ -1,0 +1,17 @@
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.Business.deps.json
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.Business.dll
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.Business.pdb
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.Core.dll
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.Core.pdb
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.csproj.AssemblyReference.cache
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.AssemblyInfoInputs.cache
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.AssemblyInfo.cs
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.csproj.CoreCompileInputs.cache
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.csproj.CopyComplete
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.dll
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\refint\EduHome.Business.dll
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\EduHome.Business.pdb
+D:\Projects\E-Course\src\EduHome.Business\obj\Debug\net6.0\ref\EduHome.Business.dll
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.DataAccess.dll
+D:\Projects\E-Course\src\EduHome.Business\bin\Debug\net6.0\EduHome.DataAccess.pdb

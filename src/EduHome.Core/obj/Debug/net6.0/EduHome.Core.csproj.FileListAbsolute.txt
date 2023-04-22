@@ -1,0 +1,12 @@
+D:\Projects\E-Course\src\EduHome.Core\bin\Debug\net6.0\EduHome.Core.deps.json
+D:\Projects\E-Course\src\EduHome.Core\bin\Debug\net6.0\EduHome.Core.dll
+D:\Projects\E-Course\src\EduHome.Core\bin\Debug\net6.0\EduHome.Core.pdb
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.csproj.AssemblyReference.cache
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.AssemblyInfoInputs.cache
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.AssemblyInfo.cs
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.csproj.CoreCompileInputs.cache
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.dll
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\refint\EduHome.Core.dll
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\EduHome.Core.pdb
+D:\Projects\E-Course\src\EduHome.Core\obj\Debug\net6.0\ref\EduHome.Core.dll
