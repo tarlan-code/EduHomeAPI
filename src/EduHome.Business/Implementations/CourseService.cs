@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using EduHome.Business.DTOs.Courses;
 using EduHome.Business.Exceptions;
+using EduHome.Business.Extensions;
 using EduHome.Business.Interfaces;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Repositories.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -12,11 +14,12 @@ public class CourseService : ICourseService
 {
     readonly ICourseRepository _courseRepository;
     readonly IMapper _mapper;
-
-    public CourseService(ICourseRepository courseRepository, IMapper mapper)
+    readonly IWebHostEnvironment _environment;
+    public CourseService(ICourseRepository courseRepository, IMapper mapper, IWebHostEnvironment environment)
     {
         _courseRepository = courseRepository;
         _mapper = mapper;
+        _environment = environment;
     }
 
     public async Task<IEnumerable<CourseDto>> GetAllCourseAsync()
@@ -47,7 +50,20 @@ public class CourseService : ICourseService
     public async Task CreateAsync(CoursePostDto course)
     {
         if(course is null) throw new ArgumentNullException(nameof(course));
+
+        string filename = String.Empty;
+        if(course.Image is not null)
+        {
+            if (!course.Image.CheckType("image"))
+                throw new FileNotValidException("File type is not image");
+            if(!course.Image.CheckSize(300))
+                throw new FileNotValidException("File size bigger than 300kb");
+            filename = await course.Image.SaveFile(Path.Combine(_environment.WebRootPath, "assets", "course"));
+        }
+
+
         var newCourse = _mapper.Map<Course>(course);
+        newCourse.Image = filename;
         await _courseRepository.CreateAsync(newCourse);
         await _courseRepository.SaveAsync();
     }

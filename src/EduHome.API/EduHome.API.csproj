@@ -19,4 +19,8 @@
     <ProjectReference Include="..\EduHome.Business\EduHome.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\course\" />
+  </ItemGroup>
+
 </Project>

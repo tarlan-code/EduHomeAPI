@@ -8,7 +8,8 @@ public class CourseMapper:Profile
 	public CourseMapper()
 	{
 		CreateMap<Course, CourseDto>().ReverseMap();
-		CreateMap<Course, CoursePostDto>().ReverseMap();
+		CreateMap<Course, CoursePostDto>().ReverseMap()
+			.ForMember(c=>c.Image,c=>c.Ignore());
 		CreateMap<Course, CourseUpdateDto>().ReverseMap();
 	}
 }

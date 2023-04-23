@@ -8,7 +8,7 @@ using System.Net;
 namespace EduHome.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class CoursesController : ControllerBase
 {
     readonly ICourseService _courseService;
@@ -82,7 +82,7 @@ public class CoursesController : ControllerBase
 
 
     [HttpPost]
-    public async Task<IActionResult> Post(CoursePostDto course)
+    public async Task<IActionResult> Post([FromForm]CoursePostDto course)
     {
         try
         {

@@ -35,6 +35,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
     opt.Password.RequireNonAlphanumeric = false;
 
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+
+//Jwt
 builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -54,6 +57,8 @@ builder.Services.AddAuthentication(opt =>
         LifetimeValidator = (_, expires, _, _) => expires != null ? expires > DateTime.UtcNow : false
     };
 });
+//
+
 
 
 builder.Services.AddAutoMapper(typeof(CourseMapper).Assembly);

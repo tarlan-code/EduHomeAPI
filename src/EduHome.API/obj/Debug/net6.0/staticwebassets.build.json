@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "2E+r0ymVEXUT8wwebbXk8S1ncBpOn8jzwSE1uP+E1/I=",
+  "Hash": "bMaA2E0/ulPGa2gwidBKj673sGeFCqPkwqc3Q576dWY=",
   "Source": "EduHome.API",
   "BasePath": "_content/EduHome.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EduHome.API\\wwwroot",
+      "Source": "EduHome.API",
+      "ContentRoot": "D:\\Projects\\E-Course\\src\\EduHome.API\\wwwroot\\",
+      "BasePath": "_content/EduHome.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

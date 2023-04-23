@@ -5,10 +5,6 @@ using EduHome.Business.Interfaces;
 using EduHome.Core.Entities;
 using EduHome.Core.Enums;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 
 namespace EduHome.Business.Implementations;
@@ -34,7 +30,7 @@ public class AuthService : IAuthService
         if(!check) throw new AuthFailException("Username or password is wrong");
 
         //Create JWT 
-        return await _tokenHandler.GenerateTokenAsync(user,1);
+        return await _tokenHandler.GenerateTokenAsync(user,10);
        
     }
 
