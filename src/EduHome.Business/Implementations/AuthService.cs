@@ -1,5 +1,6 @@
 ﻿using EduHome.Business.DTOs.Auth;
 using EduHome.Business.Exceptions;
+using EduHome.Business.HelperServices.Interfaces;
 using EduHome.Business.Interfaces;
 using EduHome.Core.Entities;
 using EduHome.Core.Enums;
@@ -14,11 +15,12 @@ namespace EduHome.Business.Implementations;
 public class AuthService : IAuthService
 {
     readonly UserManager<AppUser> _userManager;
-    readonly IConfiguration _configuration;
-    public AuthService(UserManager<AppUser> userManager, IConfiguration configuration)
+    readonly ITokenHandler _tokenHandler;
+
+    public AuthService(UserManager<AppUser> userManager, ITokenHandler tokenHandler)
     {
         _userManager = userManager;
-        _configuration = configuration;
+        _tokenHandler = tokenHandler;
     }
 
     public async Task<TokenResponseDto> LoginAsync(LoginDto loginDto)
@@ -32,38 +34,8 @@ public class AuthService : IAuthService
         if(!check) throw new AuthFailException("Username or password is wrong");
 
         //Create JWT 
-
-        List<Claim> claims = new()
-        {
-            new Claim(ClaimTypes.Name,user.UserName),
-            new Claim(ClaimTypes.NameIdentifier,user.Id),
-            new Claim(ClaimTypes.Email,user.Email),
-        };
-        var roles = await _userManager.GetRolesAsync(user);
-
-        foreach (var role in roles)
-        {
-            claims.Add(new(ClaimTypes.Role, role));
-        }
-        SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["JWT:SecurityKey"]));
-        SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
-        JwtSecurityToken jwtToken = new(
-            issuer: _configuration["JWT:Issuer"], 
-            audience: _configuration["JWT:Audience"],
-            claims: claims,
-            notBefore: DateTime.UtcNow,
-            expires: DateTime.UtcNow.AddSeconds(1),
-            signingCredentials:signingCredentials);
-
-        JwtSecurityTokenHandler tokenHandler = new();
-        string token = tokenHandler.WriteToken(jwtToken);
-
-        return new ()
-        {
-            Token = token,
-            Username = user.UserName,
-            Expires = jwtToken.ValidTo
-        };
+        return await _tokenHandler.GenerateTokenAsync(user,1);
+       
     }
 
     public async Task RegisterAsync(RegisterDto registerDto)

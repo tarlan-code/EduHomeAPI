@@ -1,14 +1,14 @@
 ﻿using EduHome.Business.DTOs.Courses;
 using EduHome.Business.Exceptions;
 using EduHome.Business.Interfaces;
-using EduHome.Core.Entities;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace EduHome.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class CoursesController : ControllerBase
 {
     readonly ICourseService _courseService;
